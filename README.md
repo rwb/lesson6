@@ -456,6 +456,14 @@ Number of Fisher Scoring iterations: 4
 
 * We now consider the meaning of the intercept term in this new model. The estimate of -1.1206 corresponds to the logit for persons in the separate group with no aggravating circumstances. Unlike the earlier models -- which were saturated (meaning we can perfectly reproduce the frequency table cells from the logit parameter estimates) -- this model is not saturated. We can check to see what failure rate is predicted for the separate group with no aggravating circumstances (versus the rate that is actually observed):
 
+```r
+table(df$y,df$ta,df$aggcirc)
+12/(37+12)
+exp(-1.1206)/(1+exp(-1.1206))
+```
+
+* Here are the results:
+
 ```rout
 > table(df$y,df$ta,df$aggcirc)
 , ,  = 0
@@ -490,6 +498,7 @@ exp(-1.1260)/(1+exp(-1.1260))
 table(df$y,df$ta,df$aggcirc)
 ```
 
+* and the results are:
 
 ```rout
 > free.agg.int <- glm(y~1+arrest+advise+aggcirc+aggcirc*arrest+aggcirc*advise,
@@ -546,6 +555,14 @@ Number of Fisher Scoring iterations: 4
 
 * The log-likelihood ratio test comparing the saturated model (with an interaction) to the main-effects only model is:
 
+```r
+logLik(free.agg)
+logLik(free.agg.int)
+-2*(-145.6446-(-145.5942))
+```
+
+* here are the results:
+
 ```rout
 > logLik(free.agg)
 'log Lik.' -145.6446 (df=4)
@@ -558,7 +575,16 @@ Number of Fisher Scoring iterations: 4
 * With 2 degrees of freedom, this is not a significant difference at any conventional significance level.
 * Next, let's check the AIC and BIC results:
 
+```r
+logLik(free.agg)-4
+logLik(free.agg.int)-6
+logLik(free.agg)-4/2*log(313)
+logLik(free.agg.int)-6/2*log(313)
 ```
+
+and the results are:
+
+```rout
 # AIC results:
 
 > logLik(free.agg)-4
