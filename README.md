@@ -577,7 +577,7 @@ Number of Fisher Scoring iterations: 4
 
 * Based on both AIC and BIC, we would choose the `free.agg model` over the `free.agg.int` model.
 
-##### Practice Problems Due
+##### Practice Problems
 
 1. Use the treatment as delivered and outcome data to construct a chi-square test of independence.
 2. Compare the results of the chi-square test of independence to the likelihood ratio chi-square test.
