@@ -580,8 +580,9 @@ Number of Fisher Scoring iterations: 4
 ##### Practice Problems
 
 1. Use the treatment as delivered and outcome data to construct a chi-square test of independence.
-2. Compare the results of the chi-square test of independence to the likelihood ratio chi-square test.
+2. Compare the results of the Pearson chi-square test of independence to the likelihood ratio chi-square test.
 3. Calculate the failure rates for each of the treatment delivered groups using the contingency table approach compared to the rates implied by the logistic regression analysis.
 4. Add the aggravating circumstances variable to the logistic regression model. Interpret the results.
-5. Add an interaction term to the logit model you estimated in part 4 to get a saturated model. Test for whether the saturated model or the main-effects-only model is more consistent with the data.
-6. Use AIC and BIC to check on the same question you addressed in part 5. Interpret your results.
+5. Add an interaction term to the logit model you estimated in part 4 to get a saturated model. 
+6. Verify that the saturated model recovers the failure rates that can be calculated from the contingency table.
+7. Examine the likelihood-ratio test, AIC, and BIC to discern whether the saturated model or the main-effects-only model is more consistent with the data.
